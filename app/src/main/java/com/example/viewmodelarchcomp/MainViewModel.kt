@@ -1,6 +1,7 @@
 package com.example.viewmodelarchcomp
 
 import android.content.Context
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 
@@ -31,4 +32,12 @@ class MainViewModel(val context: Context): ViewModel() {
     fun nextQuote() = quoteList[index++]
 
     fun prevQuote() = quoteList[index--]
+
+
+    val factsLiveData =  MutableLiveData<String>("This is a fact!!")
+
+    fun updateLiveData(){
+        factsLiveData.value = "Another Fact"
+
+    }
 }
